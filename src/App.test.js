@@ -1,9 +1,19 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { shallow } from 'enzyme';
 import App from './App';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
+describe('App', () => {
+  const app = shallow(<App />);
+
+  it('renders properly', () => {
+    expect(app).toMatchSnapshot();
+  });
+
+  it('contains a NewsFeed Component', () => {
+    expect(app.find('NewsFeed').exists()).toBe(true);
+  });
+
+  it('contains a Header Component', () => {
+    expect(app.find('Header').exists()).toBe(true);
+  });
 });

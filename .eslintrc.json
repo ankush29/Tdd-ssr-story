@@ -1,10 +1,20 @@
 {
   "extends": "airbnb",
+  "parser": "babel-eslint",
   "env": {
     "browser": true,
     "jest": true
   },
   "rules": {
-    "react/jsx-filename-extension": "off"
+    "react/jsx-filename-extension": "off",
+    "import/no-unresolved": "off",
+    "linebreak-style": ["error", "windows"]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
   }
 }
