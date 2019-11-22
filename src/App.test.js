@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
+import Header from './components/Header';
+import NewsFeed from './components/NewsFeed';
 
 describe('App', () => {
   const app = shallow(<App />);
@@ -10,10 +12,10 @@ describe('App', () => {
   });
 
   it('contains a NewsFeed Component', () => {
-    expect(app.find('NewsFeed').exists()).toBe(true);
+    expect(app.containsMatchingElement(<NewsFeed />)).toEqual(true);
   });
 
   it('contains a Header Component', () => {
-    expect(app.find('Header').exists()).toBe(true);
+    expect(app.containsMatchingElement(<Header />)).toEqual(true);
   });
 });
