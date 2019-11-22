@@ -1,8 +1,11 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import App from './App';
+<<<<<<< HEAD
 import NewsFeed from './components/NewsFeed';
 import Header from './components/Header';
+import Header from './components/Header';
+import NewsFeed from './components/NewsFeed';
 
 describe('App', () => {
   const app = shallow(<App />);
